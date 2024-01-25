@@ -261,6 +261,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (a >= 1) {
+        Player1.sayText(a)
         if (Player1.isHittingTile(CollisionDirection.Bottom)) {
             Player1.vy = -200
         }
@@ -385,7 +386,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
             100,
             false
             )
-        } else if (false) {
+        } else if (characterAnimations.matchesRule(Player1, characterAnimations.rule(Predicate.FacingLeft))) {
             animation.runImageAnimation(
             Player1,
             [img`
@@ -984,7 +985,6 @@ function Startmenu () {
         }
     })
     myMenu.moveSelection(miniMenu.MoveDirection.Left)
-    music.play(music.createSong(hex`003c000408070301001c000f05001202c102c201000405002800000064002800031400060200043300000010000305142910001800012018002000012920002800012728003000012530003800011d3800400001204000500002061e05001c000f0a006400f4010a0000040000000000000000000000000000000002120001000200012507000800012210001100011e07001c00020a006400f401640000040000000000000000000000000000000003310040004800010f48005000011250005800011458006000011260006c000211256c007000010f70007400010d740078000111`), music.PlaybackMode.UntilDone)
 }
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile8`, function (sprite, location) {
 	
@@ -1120,5 +1120,5 @@ scene.setBackgroundImage(img`
     cccccccccccccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbccccccccccccc
     `)
 color.startFade(color.Black, color.originalPalette)
-Startmenu()
 a = 0
+Startmenu()
