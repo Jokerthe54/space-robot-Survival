@@ -9,7 +9,198 @@ namespace SpriteKind {
     export const heart = SpriteKind.create()
     export const Boss1 = SpriteKind.create()
     export const bomb = SpriteKind.create()
+    export const Loot = SpriteKind.create()
 }
+namespace StatusBarKind {
+    export const Gas = StatusBarKind.create()
+}
+function Chest1 () {
+    Chest = sprites.create(img`
+        . . . . . . f f c . . . . . . . 
+        . . . . . c b c d c . . . . . . 
+        . . . . f b 3 c d 3 c . . . . . 
+        . . . . f b c c b 3 c . . . . . 
+        . . . . f 3 c d 3 b b c . . . . 
+        . . . . f 3 c d 3 3 b c . . . . 
+        . . . . f b b c b 3 3 c . . . . 
+        . . . . f 3 c d 3 b b c . . . . 
+        . . . . f 3 c d 3 3 3 c . . . . 
+        . . . . f b b c b 3 3 c . . . . 
+        . . . . f 3 c d 3 3 b c . . . . 
+        . . . . f 3 c d 3 b b c . . . . 
+        . . . . f b c c b 3 c . . . . . 
+        . . . . f b 3 c d 3 c . . . . . 
+        . . . . . c b c d c . . . . . . 
+        . . . . . . f f c . . . . . . . 
+        `, SpriteKind.Loot)
+    c3 = sprites.create(img`
+        . . . . . . f f c . . . . . . . 
+        . . . . . c b c d c . . . . . . 
+        . . . . f b 3 c d 3 c . . . . . 
+        . . . . f b c c b 3 c . . . . . 
+        . . . . f 3 c d 3 b b c . . . . 
+        . . . . f 3 c d 3 3 b c . . . . 
+        . . . . f b b c b 3 3 c . . . . 
+        . . . . f 3 c d 3 b b c . . . . 
+        . . . . f 3 c d 3 3 3 c . . . . 
+        . . . . f b b c b 3 3 c . . . . 
+        . . . . f 3 c d 3 3 b c . . . . 
+        . . . . f 3 c d 3 b b c . . . . 
+        . . . . f b c c b 3 c . . . . . 
+        . . . . f b 3 c d 3 c . . . . . 
+        . . . . . c b c d c . . . . . . 
+        . . . . . . f f c . . . . . . . 
+        `, SpriteKind.Loot)
+    c4 = sprites.create(img`
+        . . . . . . f f c . . . . . . . 
+        . . . . . c b c d c . . . . . . 
+        . . . . f b 3 c d 3 c . . . . . 
+        . . . . f b c c b 3 c . . . . . 
+        . . . . f 3 c d 3 b b c . . . . 
+        . . . . f 3 c d 3 3 b c . . . . 
+        . . . . f b b c b 3 3 c . . . . 
+        . . . . f 3 c d 3 b b c . . . . 
+        . . . . f 3 c d 3 3 3 c . . . . 
+        . . . . f b b c b 3 3 c . . . . 
+        . . . . f 3 c d 3 3 b c . . . . 
+        . . . . f 3 c d 3 b b c . . . . 
+        . . . . f b c c b 3 c . . . . . 
+        . . . . f b 3 c d 3 c . . . . . 
+        . . . . . c b c d c . . . . . . 
+        . . . . . . f f c . . . . . . . 
+        `, SpriteKind.Loot)
+    c5 = sprites.create(img`
+        . . . . . . f f c . . . . . . . 
+        . . . . . c b c d c . . . . . . 
+        . . . . f b 3 c d 3 c . . . . . 
+        . . . . f b c c b 3 c . . . . . 
+        . . . . f 3 c d 3 b b c . . . . 
+        . . . . f 3 c d 3 3 b c . . . . 
+        . . . . f b b c b 3 3 c . . . . 
+        . . . . f 3 c d 3 b b c . . . . 
+        . . . . f 3 c d 3 3 3 c . . . . 
+        . . . . f b b c b 3 3 c . . . . 
+        . . . . f 3 c d 3 3 b c . . . . 
+        . . . . f 3 c d 3 b b c . . . . 
+        . . . . f b c c b 3 c . . . . . 
+        . . . . f b 3 c d 3 c . . . . . 
+        . . . . . c b c d c . . . . . . 
+        . . . . . . f f c . . . . . . . 
+        `, SpriteKind.Loot)
+    c6 = sprites.create(img`
+        . . . . . . f f c . . . . . . . 
+        . . . . . c b c d c . . . . . . 
+        . . . . f b 3 c d 3 c . . . . . 
+        . . . . f b c c b 3 c . . . . . 
+        . . . . f 3 c d 3 b b c . . . . 
+        . . . . f 3 c d 3 3 b c . . . . 
+        . . . . f b b c b 3 3 c . . . . 
+        . . . . f 3 c d 3 b b c . . . . 
+        . . . . f 3 c d 3 3 3 c . . . . 
+        . . . . f b b c b 3 3 c . . . . 
+        . . . . f 3 c d 3 3 b c . . . . 
+        . . . . f 3 c d 3 b b c . . . . 
+        . . . . f b c c b 3 c . . . . . 
+        . . . . f b 3 c d 3 c . . . . . 
+        . . . . . c b c d c . . . . . . 
+        . . . . . . f f c . . . . . . . 
+        `, SpriteKind.Loot)
+    chest2 = sprites.create(img`
+        . . . . . . . c f f . . . . . . 
+        . . . . . . c d c b c . . . . . 
+        . . . . . c 3 d c 3 b f . . . . 
+        . . . . . c 3 b c c b f . . . . 
+        . . . . c b b 3 d c 3 f . . . . 
+        . . . . c b 3 3 d c 3 f . . . . 
+        . . . . c 3 3 b c b b f . . . . 
+        . . . . c b b 3 d c 3 f . . . . 
+        . . . . c 3 3 3 d c 3 f . . . . 
+        . . . . c 3 3 b c b b f . . . . 
+        . . . . c b 3 3 d c 3 f . . . . 
+        . . . . c b b 3 d c 3 f . . . . 
+        . . . . . c 3 b c c b f . . . . 
+        . . . . . c 3 d c 3 b f . . . . 
+        . . . . . . c d c b c . . . . . 
+        . . . . . . . c f f . . . . . . 
+        `, SpriteKind.Loot)
+    tiles.placeOnTile(Chest, tiles.getTileLocation(19, 15))
+    tiles.placeOnTile(chest2, tiles.getTileLocation(51, 10))
+    tiles.placeOnTile(c3, tiles.getTileLocation(29, 2))
+}
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Loot, function (sprite, otherSprite) {
+    if (b == 0) {
+        Boost.max += 25
+        b += 1
+        Chest.setImage(img`
+            . . f f c . . . . c c f . . . . 
+            . c b 3 3 c . . f 3 3 c f c . . 
+            f b 3 c f 3 c f b c c b 3 b c . 
+            f b c c f f c b b c c b c 3 c . 
+            f 3 b f f f c b c c b c c 3 f . 
+            f 3 b f f f f c c c c c c b b f 
+            f b f f f f f c c c c b b b b c 
+            f 3 b f f f f c c c c c c c 3 c 
+            f 3 b f f f f c c c c c c c 3 c 
+            f b f f f f f c c c c b b b b c 
+            f 3 b f f f f c c c c c c b b f 
+            f 3 b f f f c b c c b c c 3 f . 
+            f b c c f f c b b c c b c 3 c . 
+            f b 3 c f 3 c f b c c b 3 b c . 
+            . c b 3 3 c . . f 3 3 c f c . . 
+            . . f f c . . . . c c f . . . . 
+            `)
+        sprites.destroy(blast, effects.warmRadial, 1000)
+        Player1.sayText("I got a boost upgrade")
+        game.showLongText("You have unlocked your first boost upgrade! You now have the ability to do a boosted jump by holding A. As you progress through the game you will unlock more Boost upgrades making your jump last longer and higher.", DialogLayout.Bottom)
+    } else if (b == 1) {
+        b += 1
+        chest2.setImage(img`
+            . . . . f c c . . . . c f f . . 
+            . . c f c 3 3 f . . c 3 3 b c . 
+            . c b 3 b c c b f c 3 f c 3 b f 
+            . c 3 c b c c b b c f f c c b f 
+            . f 3 c c b c c b c f f f b 3 f 
+            f b b c c c c c c f f f f b 3 f 
+            c b b b b c c c c f f f f f b f 
+            c 3 c c c c c c c f f f f b 3 f 
+            c 3 c c c c c c c f f f f b 3 f 
+            c b b b b c c c c f f f f f b f 
+            f b b c c c c c c f f f f b 3 f 
+            . f 3 c c b c c b c f f f b 3 f 
+            . c 3 c b c c b b c f f c c b f 
+            . c b 3 b c c b f c 3 f c 3 b f 
+            . . c f c 3 3 f . . c 3 3 b c . 
+            . . . . f c c . . . . c f f . . 
+            `)
+        Boost.max += 25
+        Player1.sayText("I got a boost upgrade")
+        sprites.destroy(blast, effects.warmRadial, 1000)
+        chest2.sayText(Boost.value)
+    } else if (b == 2) {
+        Boost.max += 25
+        b += 1
+        c3.setImage(img`
+            . . f f c . . . . c c f . . . . 
+            . c b 3 3 c . . f 3 3 c f c . . 
+            f b 3 c f 3 c f b c c b 3 b c . 
+            f b c c f f c b b c c b c 3 c . 
+            f 3 b f f f c b c c b c c 3 f . 
+            f 3 b f f f f c c c c c c b b f 
+            f b f f f f f c c c c b b b b c 
+            f 3 b f f f f c c c c c c c 3 c 
+            f 3 b f f f f c c c c c c c 3 c 
+            f b f f f f f c c c c b b b b c 
+            f 3 b f f f f c c c c c c b b f 
+            f 3 b f f f c b c c b c c 3 f . 
+            f b c c f f c b b c c b c 3 c . 
+            f b 3 c f 3 c f b c c b 3 b c . 
+            . c b 3 3 c . . f 3 3 c f c . . 
+            . . f f c . . . . c c f . . . . 
+            `)
+        sprites.destroy(blast, effects.warmRadial, 1000)
+        Player1.sayText("I got a boost upgrade")
+    }
+})
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (a >= 1) {
         if (characterAnimations.matchesRule(Player1, characterAnimations.rule(Predicate.FacingRight))) {
@@ -259,11 +450,42 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
         }
     }
 })
+function Player1p () {
+    Player1 = sprites.create(img`
+        ..................
+        .....dcbbbccc.....
+        ....f2dcbccccc....
+        ....bcccccccbf....
+        ....cbbbcbbfbc....
+        ....c99bb99fcf....
+        ....cbbcbbcfcf....
+        ....cfcffffff.....
+        ......fffcfc......
+        ....ccffffffcc....
+        ..fcbfccbcfbfbcf..
+        .fbbbfbbcbfbfbbbf.
+        .f..cfbbbbfbfc..f.
+        ......fccccf......
+        ......ffffff......
+        ......ff..ff......
+        .....fcf.fcf......
+        ....fcbbfbcbf.....
+        `, SpriteKind.robotdrex)
+    controller.moveSprite(Player1, 50, 0)
+    scene.cameraFollowSprite(Player1)
+    Player1.setPosition(6, 111)
+    Player1.sayText("I must find a way out of here", 5000, false)
+    tiles.placeOnTile(Player1, tiles.getTileLocation(3, 11))
+    Player1.ay = 600
+}
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (a >= 1) {
-        Player1.sayText(a)
-        if (Player1.isHittingTile(CollisionDirection.Bottom)) {
+        if (Player1.isHittingTile(CollisionDirection.Bottom) && Boost.value > 50) {
             Player1.vy = -200
+        } else if (Player1.isHittingTile(CollisionDirection.Bottom) && (Boost.value < 50 && Boost.value > 25)) {
+            Player1.vy = -150
+        } else if (Player1.isHittingTile(CollisionDirection.Bottom) && (Boost.value < 25 && Boost.value > 0)) {
+            Player1.vy = -100
         }
         if (characterAnimations.matchesRule(Player1, characterAnimations.rule(Predicate.FacingRight))) {
             animation.runImageAnimation(
@@ -510,19 +732,38 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         }
     }
 })
-function Scence () {
-	
-}
 function Newgame () {
     a += 5
     tiles.setCurrentTilemap(tilemap`level3`)
-    Player1 = sprites.create(img`
+    Player1p()
+    Health1()
+    boostbargas()
+    Animation()
+    Chest1()
+    Enemy1()
+}
+function Health1 () {
+    Healthbar = statusbars.create(20, 4, StatusBarKind.Health)
+    Healthbar.value = 100
+    Healthbar.setLabel("HP")
+    Healthbar.positionDirection(CollisionDirection.Top)
+    Healthbar.setBarSize(50, 5)
+}
+function boostbargas () {
+    Boost = statusbars.create(20, 4, StatusBarKind.Gas)
+    Boost.setLabel("Boost")
+    Boost.value = 100
+    Boost.setColor(9, 2)
+    Boost.positionDirection(CollisionDirection.Bottom)
+}
+function Enemy1 () {
+    Chest_Guard = sprites.create(img`
         ..................
         .....dcbbbccc.....
         ....f2dcbccccc....
         ....bcccccccbf....
         ....cbbbcbbfbc....
-        ....c99bb99fcf....
+        ....c22bb22fcf....
         ....cbbcbbcfcf....
         ....cfcffffff.....
         ......fffcfc......
@@ -535,11 +776,10 @@ function Newgame () {
         ......ff..ff......
         .....fcf.fcf......
         ....fcbbfbcbf.....
-        `, SpriteKind.robotdrex)
-    controller.moveSprite(Player1, 50, 0)
-    scene.cameraFollowSprite(Player1)
-    Player1.setPosition(6, 111)
-    Player1.sayText("I must find a way out of here", 5000, false)
+        `, SpriteKind.Enemy)
+    tiles.placeOnTile(Chest_Guard, tiles.getTileLocation(22, 15))
+}
+function Animation () {
     characterAnimations.loopFrames(
     Player1,
     [img`
@@ -828,7 +1068,7 @@ function Newgame () {
         ....fcbbfbcbf.....
         `],
     100,
-    characterAnimations.rule(Predicate.FacingLeft, Predicate.MovingLeft)
+    characterAnimations.rule(Predicate.FacingLeft, Predicate.MovingLeft, Predicate.HittingWallDown)
     )
     characterAnimations.loopFrames(
     Player1,
@@ -929,15 +1169,8 @@ function Newgame () {
         .....fbcbfbbcf....
         `],
     100,
-    characterAnimations.rule(Predicate.FacingRight, Predicate.MovingRight)
+    characterAnimations.rule(Predicate.FacingRight, Predicate.MovingRight, Predicate.HittingWallDown)
     )
-    tiles.placeOnTile(Player1, tiles.getTileLocation(3, 11))
-    Player1.ay = 600
-    Healthbar = statusbars.create(20, 4, StatusBarKind.Health)
-    Healthbar.value = 100
-    Healthbar.setLabel("HP")
-    Healthbar.positionDirection(CollisionDirection.Top)
-    Healthbar.setBarSize(50, 5)
 }
 function Startmenu () {
     myMenu = miniMenu.createMenu(
@@ -989,13 +1222,87 @@ function Startmenu () {
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile8`, function (sprite, location) {
 	
 })
+statusbars.onZero(StatusBarKind.Gas, function (status) {
+    Player1.sayText("Im all out of boost", 1000, false)
+})
+controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
+    if (b >= 1 && Boost.value > 25) {
+        Player1.vy = -200
+        if (characterAnimations.matchesRule(Player1, characterAnimations.rule(Predicate.FacingRight))) {
+            animation.runImageAnimation(
+            Player1,
+            [img`
+                ......cccbbbcd......
+                .....cccccbcd2f.....
+                .....fbcccccccb.....
+                .....cbfbbcbbbc.....
+                .....fcf99bb99c.....
+                .....fcfcbbcbbc.....
+                ......ffffffcfc.....
+                .......cfcfff.......
+                .....ccffffffcc.....
+                ...fcbfbfcbccfbcf...
+                ..fbbbfbfbcbbfbbbf..
+                ..f11cfbfbbbbfc11f..
+                ..5995.fccccf.5995..
+                .599995ffffff599995.
+                .......ff..ff.......
+                .......fcf.fcf......
+                ......fbcbfbbcf.....
+                .....51111.11115....
+                ....599999.999995...
+                ...5999999.9999995..
+                `],
+            50,
+            false
+            )
+        } else if (characterAnimations.matchesRule(Player1, characterAnimations.rule(Predicate.FacingLeft))) {
+            animation.runImageAnimation(
+            Player1,
+            [img`
+                ......dcbbbccc......
+                .....f2dcbccccc.....
+                .....bcccccccbf.....
+                .....cbbbcbbfbc.....
+                .....c99bb99fcf.....
+                .....cbbcbbcfcf.....
+                .....cfcffffff......
+                .......fffcfc.......
+                .....ccffffffcc.....
+                ...fcbfccbcfbfbcf...
+                ..fbbbfbbcbfbfbbbf..
+                ..f11cfbbbbfbfc11f..
+                ..5995.fccccf.5995..
+                .599995ffffff599995.
+                .......ff..ff.......
+                ......fcf.fcf.......
+                .....fcbbfbcbf......
+                ....51111.11115.....
+                ...599999.999995....
+                ..5999999.9999995...
+                `],
+            50,
+            false
+            )
+        }
+    }
+})
 scene.onHitWall(SpriteKind.Projectile, function (sprite, location) {
     sprites.destroy(blast, effects.fire, 100)
 })
 let myMenu: miniMenu.MenuSprite = null
+let Chest_Guard: Sprite = null
 let Healthbar: StatusBarSprite = null
-let blast: Sprite = null
 let Player1: Sprite = null
+let blast: Sprite = null
+let Boost: StatusBarSprite = null
+let chest2: Sprite = null
+let c6: Sprite = null
+let c5: Sprite = null
+let c4: Sprite = null
+let c3: Sprite = null
+let Chest: Sprite = null
+let b = 0
 let a = 0
 scene.setBackgroundImage(img`
     ffffffffffffffffffffffffcffffffffffffffffffffffffffdddddfffffffffffffddfffffdfdfffffffffffffffffffffffffffffffffffffffffffffffcffcffffffffffffffffffffffffffffff
@@ -1121,4 +1428,14 @@ scene.setBackgroundImage(img`
     `)
 color.startFade(color.Black, color.originalPalette)
 a = 0
+b = 0
 Startmenu()
+game.onUpdate(function () {
+    if (a > 0) {
+        if (characterAnimations.matchesRule(Player1, characterAnimations.rule(Predicate.MovingUp)) || characterAnimations.matchesRule(Player1, characterAnimations.rule(Predicate.HittingWallUp))) {
+            Boost.value += -5
+        } else if (characterAnimations.matchesRule(Player1, characterAnimations.rule(Predicate.HittingWallDown))) {
+            Boost.value += 1
+        }
+    }
+})
