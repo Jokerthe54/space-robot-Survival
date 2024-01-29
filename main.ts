@@ -131,6 +131,9 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Loot, function (sprite, othe
     if (b == 0) {
         Boost.max += 25
         b += 1
+        sprites.destroy(blast, effects.warmRadial, 1000)
+        Player1.sayText("I got a boost upgrade")
+        game.showLongText("You have unlocked your first boost upgrade! You now have the ability to do a boosted jump by holding A. As you progress through the game you will unlock more Boost upgrades making your jump last longer and higher.", DialogLayout.Bottom)
         Chest.setImage(img`
             . . f f c . . . . c c f . . . . 
             . c b 3 3 c . . f 3 3 c f c . . 
@@ -149,11 +152,11 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Loot, function (sprite, othe
             . c b 3 3 c . . f 3 3 c f c . . 
             . . f f c . . . . c c f . . . . 
             `)
-        sprites.destroy(blast, effects.warmRadial, 1000)
-        Player1.sayText("I got a boost upgrade")
-        game.showLongText("You have unlocked your first boost upgrade! You now have the ability to do a boosted jump by holding A. As you progress through the game you will unlock more Boost upgrades making your jump last longer and higher.", DialogLayout.Bottom)
     } else if (b == 1) {
         b += 1
+        Boost.max += 25
+        Player1.sayText("I got a boost upgrade")
+        sprites.destroy(blast, effects.warmRadial, 1000)
         chest2.setImage(img`
             . . . . f c c . . . . c f f . . 
             . . c f c 3 3 f . . c 3 3 b c . 
@@ -172,13 +175,11 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Loot, function (sprite, othe
             . . c f c 3 3 f . . c 3 3 b c . 
             . . . . f c c . . . . c f f . . 
             `)
-        Boost.max += 25
-        Player1.sayText("I got a boost upgrade")
-        sprites.destroy(blast, effects.warmRadial, 1000)
-        chest2.sayText(Boost.value)
     } else if (b == 2) {
         Boost.max += 25
         b += 1
+        sprites.destroy(blast, effects.warmRadial, 1000)
+        Player1.sayText("I got a boost upgrade")
         c3.setImage(img`
             . . f f c . . . . c c f . . . . 
             . c b 3 3 c . . f 3 3 c f c . . 
@@ -197,8 +198,6 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Loot, function (sprite, othe
             . c b 3 3 c . . f 3 3 c f c . . 
             . . f f c . . . . c c f . . . . 
             `)
-        sprites.destroy(blast, effects.warmRadial, 1000)
-        Player1.sayText("I got a boost upgrade")
     }
 })
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -473,9 +472,8 @@ function Player1p () {
         `, SpriteKind.robotdrex)
     controller.moveSprite(Player1, 50, 0)
     scene.cameraFollowSprite(Player1)
-    Player1.setPosition(6, 111)
     Player1.sayText("I must find a way out of here", 5000, false)
-    tiles.placeOnTile(Player1, tiles.getTileLocation(3, 11))
+    tiles.placeOnTile(Player1, tiles.getTileLocation(cc, cr))
     Player1.ay = 600
 }
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -778,6 +776,64 @@ function Enemy1 () {
         ....fcbbfbcbf.....
         `, SpriteKind.Enemy)
     tiles.placeOnTile(Chest_Guard, tiles.getTileLocation(22, 15))
+    list = [img`
+        ..................
+        .....dcbbbccc.....
+        ....f2dcbccccc....
+        ....bcccccccbf....
+        ....cbbbcbbfbc....
+        ....c22bb22fcf....
+        ....cbbcbbcfcf....
+        ....cfcffffff.....
+        ......fffcfc......
+        ....ccffffffcc....
+        ..fcbfccbcfbfbcf..
+        .fbbbfbbcbfbfbbbf.
+        .f..cfbbbbfbfc..f.
+        ......fccccf......
+        ......ffffff......
+        ......ff..ff......
+        .....fcf.fcf......
+        ....fcbbfbcbf.....
+        `, img`
+        ..................
+        .....dcbbbccc.....
+        ....f2dcbccccc....
+        ....bcccccccbf....
+        ....cbbbcbbfbc....
+        ....c22bb22fcf....
+        ....cbbcbbcfcf....
+        ....cfcffffff.....
+        ......fffcfc......
+        ....ccffffffcc....
+        ..fcbfccbcfbfbcf..
+        .fbbbfbbcbfbfbbbf.
+        .f..cfbbbbfbfc..f.
+        ......fccccf......
+        ......ffffff......
+        ......ff..ff......
+        .....fcf.fcf......
+        ....fcbbfbcbf.....
+        `, img`
+        ..................
+        .....dcbbbccc.....
+        ....f2dcbccccc....
+        ....bcccccccbf....
+        ....cbbbcbbfbc....
+        ....c22bb22fcf....
+        ....cbbcbbcfcf....
+        ....cfcffffff.....
+        ......fffcfc......
+        ....ccffffffcc....
+        ..fcbfccbcfbfbcf..
+        .fbbbfbbcbfbfbbbf.
+        .f..cfbbbbfbfc..f.
+        ......fccccf......
+        ......ffffff......
+        ......ff..ff......
+        .....fcf.fcf......
+        ....fcbbfbcbf.....
+        `]
 }
 function Animation () {
     characterAnimations.loopFrames(
@@ -1291,6 +1347,7 @@ scene.onHitWall(SpriteKind.Projectile, function (sprite, location) {
     sprites.destroy(blast, effects.fire, 100)
 })
 let myMenu: miniMenu.MenuSprite = null
+let list: Image[] = []
 let Chest_Guard: Sprite = null
 let Healthbar: StatusBarSprite = null
 let Player1: Sprite = null
@@ -1304,6 +1361,8 @@ let c3: Sprite = null
 let Chest: Sprite = null
 let b = 0
 let a = 0
+let cc = 0
+let cr = 0
 scene.setBackgroundImage(img`
     ffffffffffffffffffffffffcffffffffffffffffffffffffffdddddfffffffffffffddfffffdfdfffffffffffffffffffffffffffffffffffffffffffffffcffcffffffffffffffffffffffffffffff
     fffcfffffffffffffffffcfffffffffffffbffbffffffffffffdddddfffffffffffffddfffffffff11fffffffffffffffffff1fffffffff11fffffffffffffffffffffffffffffffcfcfffffffffffff
@@ -1427,6 +1486,8 @@ scene.setBackgroundImage(img`
     cccccccccccccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbccccccccccccc
     `)
 color.startFade(color.Black, color.originalPalette)
+cr = 11
+cc = 3
 a = 0
 b = 0
 Startmenu()
@@ -1436,6 +1497,17 @@ game.onUpdate(function () {
             Boost.value += -5
         } else if (characterAnimations.matchesRule(Player1, characterAnimations.rule(Predicate.HittingWallDown))) {
             Boost.value += 1
+        }
+    }
+})
+game.onUpdate(function () {
+    if (a > 1) {
+        if (Player1.tileKindAt(TileDirection.Bottom, assets.tile`myTile8`)) {
+            if (cr != Player1.tilemapLocation().row && cc != Player1.tilemapLocation().column) {
+                game.splash("Checkpoint Reached!")
+            }
+            cr = Player1.tilemapLocation().row
+            cc = Player1.tilemapLocation().column
         }
     }
 })
